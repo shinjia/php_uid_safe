@@ -1,5 +1,5 @@
 <?php
-$uid = isset($_GET['uid']) ? $_GET['uid'] : 0;
+$uid = $_GET['uid'] ?? '0';
 
 $a_db = array(
    '0'=>'00000000000000000000',
@@ -17,7 +17,7 @@ $html = <<< HEREDOC
 <html>
 <head>
 <meta charset="UTF-8">
-<title>無標題文件</title>
+<title>php_uid_safe --- v1</title>
 </head>
 
 <body>

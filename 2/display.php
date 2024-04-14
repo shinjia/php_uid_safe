@@ -1,12 +1,11 @@
 <?php
 
-function uid_encode($uid, $key='abc')
-{
+function uid_encode($uid, $key='abc') {
 	return md5($uid.$key);
 }
 
-$uid = isset($_GET['uid']) ? $_GET['uid'] : 0;
-$chk = isset($_GET['chk']) ? $_GET['chk'] : '';
+$uid = $_GET['uid'] ?? 0;
+$chk = $_GET['chk'] ?? '';
 
 $a_db = array(
    '0'=>'00000000000000000000', 
@@ -16,13 +15,11 @@ $a_db = array(
    '4'=>'44444444444444444444', 
    '5'=>'55555555555555555555' );
 
-if(uid_encode($uid)==$chk)
-{
+if(uid_encode($uid)==$chk) {
    // 合法的連結
    $data = $a_db[$uid];
 }
-else
-{
+else {
    $data = '不給你看就是不給你看，亂改uid也沒有用';
 }
 
@@ -32,7 +29,7 @@ $html = <<< HEREDOC
 <html>
 <head>
 <meta charset="UTF-8">
-<title>無標題文件</title>
+<title>php_uid_safe --- v2</title>
 </head>
 
 <body>

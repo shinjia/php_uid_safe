@@ -1,7 +1,6 @@
 <?php
 
-function uid_encode($uid, $key='abc')
-{
+function uid_encode($uid, $key='abc') {
 	return md5($uid.$key);
 }
 
@@ -15,7 +14,7 @@ $html = <<< HEREDOC
 <html>
 <head>
 <meta charset="UTF-8">
-<title>無標題文件</title>
+<title>php_uid_safe --- v2</title>
 </head>
 
 <body>
