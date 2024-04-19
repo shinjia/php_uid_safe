@@ -1,14 +1,23 @@
 # php_uid_safe
 
-1 .... 沒有加上保護，使用者可以自行修改網址上的 uid
-2 .... 加上保護檢查，未被允許的超連結，改 uid 也沒用
+[![hackmd-github-sync-badge](https://hackmd.io/cxWG1MJoTNC06i2pZRTUnw/badge)](https://hackmd.io/cxWG1MJoTNC06i2pZRTUnw)
 
 
+在網頁的連結上，經常使用 GET/POST 方式傳遞參數，這參數極容易被使用者擅自變更，而在有安全考量的情況上，則需要對此進一步加上防範，只接受系統提供的超連結進入，避免使用者更改參數後，看到不被允許的內容。
+
+## 程式說明
 
 ```mermaid
 graph LR;
   list-- uid=??? -->display
 ```
+list.php 會列出各個項目及超連結，點選後即可 display.php?uid=xxx 進入看單筆的內容。
+
+
+範例資料夾：
+1 .... 沒有加上保護，使用者可以自行修改網址上的 uid
+2 .... 加上保護檢查，未被允許的超連結，改 uid 也沒用
+
 
 
 # php_uid_safe 功能說明
